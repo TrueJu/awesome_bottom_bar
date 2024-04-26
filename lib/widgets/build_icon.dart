@@ -19,7 +19,8 @@ class BuildIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget icon = Icon(
+    // Bug fixed when using widgets as icon
+    Widget icon = (item.icon is Widget) ? item.icon : Icon(
       item.icon,
       size: iconSize,
       color: iconColor,
